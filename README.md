@@ -14,17 +14,3 @@ Supports MNIST, Fashion-MNIST and CIFAR datasets.
 * PyTorch-Lightning
 * Torchvision
 * imageio (for gif generation)
-
-## Generated Images
-
-### MNIST
-
-![MNIST Generation](/imgs/mnist.gif)
-
-### Fashion-MNIST
-
-![Fashion MNIST Generation](/imgs/fashion.gif)
-
-### CIFAR
-
-![CIFAR Generation](/imgs/cifar.gif)
