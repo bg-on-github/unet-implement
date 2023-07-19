@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import Dataset
-from torchvision.datasets import MNIST, FashionMNIST, CIFAR10
+from torchvision.datasets import MNIST, FashionMNIST, CIFAR10, STL10
 from torchvision import transforms
 
 
@@ -12,11 +12,18 @@ class DiffSet(Dataset):
             "MNIST": MNIST,
             "Fashion": FashionMNIST,
             "CIFAR": CIFAR10,
+            "STL": STL10
         }
 
-        train_dataset = datasets[dataset](
-            "./data", download=True, train=train, transform=transform
-        )
+        if(dataset == "STL10"):
+          transform = transforms.Compose([transforms.ToTensor(),
+            transforms.Resize(32, 32)])
+          train_dataset = datasets.STL10(root='./data',
+            split='train', download=True, transform=transform)
+          print(transform.shape)
+        else:
+          train_dataset = datasets[dataset](
+            "./data", download=True, train=train, transform=transform)
 
         self.dataset_len = len(train_dataset.data)
 
@@ -26,7 +33,7 @@ class DiffSet(Dataset):
             data = data.unsqueeze(3)
             self.depth = 1
             self.size = 32
-        elif dataset == "CIFAR":
+        elif dataset == "CIFAR" or dataset == "STL":
             data = torch.Tensor(train_dataset.data)
             self.depth = 3
             self.size = 32
