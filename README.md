@@ -7,7 +7,8 @@ This implementation uses pytorch lightning to limit the boilerplate as much as p
 Use the provided [`entry.ipynb`](./entry.ipynb) notebook to train model and sample generated images. 
 
 Supports MNIST, Fashion-MNIST, and CIFAR datasets.
-
+=======
+main
 
 ## Steps
 
