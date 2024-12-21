@@ -1,14 +1,25 @@
-# PyTorch implementation of 'Denoising Diffusion Probabilistic Models'
+# Effectiveness of Integration of U-Net Variants in Denoising Diffusion Models
 
-This repository contains our attempt at reimplementing the main algorithm and model presented in `Denoising Diffusion Probabilistic Models`, the paper by [Ho et al., 2020](https://arxiv.org/abs/2006.11239). A nice summary of the paper by the authors is available [here](https://hojonathanho.github.io/diffusion/). 
+# Authors: 
+Biprajit Ghoshal, Sayan Mondal, Mainak Bandyopadhyay*
+*School of Computer Engineering, KIIT-Deemed to be University,
+Bhubaneswar , Odisha, India.
 
-This implementation uses pytorch lightning to limit the boilerplate as much as possible. Due to time and computational constraints, I only experimented with 32x32 image datasets, but it should scale up to larger datasets like LSUN and CelebA as demonstrated in the original paper. This implementation was done for my own self-education, and hopefully, it can help others learn as well.
+*Corresponding author(s). E-mail(s):
+mainak.bandyopadhyayfcs@kiit.ac.in;
+Contributing authors: 
+biprajitghoshal@gmail.com;
+sayanmondal1976@gmail.com;
 
-Use the provided [`entry.ipynb`](./entry.ipynb) notebook to train model and sample generated images. 
+# Abstract
+The high-quality image synthesis offered by the Denoising Diffusion Probabilistic
+Model may be stepped up using different neural network frameworks instead
+of the U-Net implementation originally provided. With the availability of these
+options comes a need to classify them on the basis of their performance, and the
+necessity to select the one that yields the best results for further work in the field.
+Thus, we present a discussion in the effectiveness of these models and a relative
+determination of which one gives a better performance in this comparative study
+of quality of image synthesis using the three variations of the traditional U-Net
+model - U-Net, U-Net2+ and U-Net3+.
 
-Supports MNIST, Fashion-MNIST, and CIFAR datasets.
-=======
-main
-
-## Steps
-
+Keywords: U-Net, U-Net2+, U-Net3+, DDPM, Review, Diffusion
